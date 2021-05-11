@@ -1,0 +1,42 @@
+<html>
+ <title>
+會計計算機
+</title>
+<head>
+404 會計計算機
+<script type="text/javascript">
+
+var n1=prompt("進貨淨額","0");
+var n2=prompt("銷項淨額","0");
+var n3=prompt("固定資產","0");
+var n4=prompt("外銷淨額","0");
+var n5=prompt("上期留抵稅額","0");
+var a1=n1*0.05;//進項稅額
+var a2=n2*0.05;//銷項稅額
+var a3=a1+n5-a2//溢付
+var a4=n4*0.05+n3*0.05//退稅上限
+var p1=a2-a1-n5//應付營業稅
+var p2=a1-a2-a4//留抵稅額 退稅上限小
+var p3=a1-a2-a3//留抵稅額 溢付小
+
+if(p1>=0)
+{
+  alert("應付營業稅"+p1);
+}
+else {//p1<0
+    if(a3>=a4)//不確定要不要放等於
+    {
+     alert("應收退稅款"+a4+"留抵稅額"+p2);
+     }
+     else//a3<a4
+	{
+	alert("應收退稅款"+a3+"留抵稅額"+p3);
+	}
+}
+
+alert("謝謝使用");
+</script>
+</head>
+<body>
+</body>
+</html>
